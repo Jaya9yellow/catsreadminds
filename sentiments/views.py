@@ -9,5 +9,9 @@ def home(request):
 
 def senti(request):
     v=[str(request.POST['string1'])]
-    pre=str(loaded_svm.predict(v))
-    return render(request,"result.html",{'result':pre})
+    pre=str(loaded_svm.predict(v)[0])
+    if pre=="neg":
+        k="So negative!"
+    else:
+        k="So boring!"    
+    return render(request,"result.html",{'result':pre,'message':k})
