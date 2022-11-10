@@ -15,5 +15,5 @@ def senti(request):
     if pre=="neg":
         k="So negative!"
     else:
-        k="So boring!"    
+        k="So nice!"    
     return render(request,"result.html",{'result':pre,'message':k})
