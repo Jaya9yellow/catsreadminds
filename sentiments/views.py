@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from pathlib import Path
 import os
 from joblib import load
-loaded_svm=load(os.path.join("../catsreadminds\ml-sent-svm.joblib"))
+BASE_DIR = Path(__file__).resolve().parent.parent
+loaded_svm=load(os.path.join(BASE_DIR,'ml-sent-svm.joblib'))
 def home(request):
     return render(request,'home.html',{'name':'India'})
 
