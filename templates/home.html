@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hello people!</h1>
+<form action="senti" method='post'>
+    {% csrf_token %}
+    Enter String: <input type="text" name="string1"><br>
+    <input type="submit">
+</form>
+{% endblock %}
